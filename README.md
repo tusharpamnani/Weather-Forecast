@@ -23,28 +23,35 @@ cargo build --release
 
 ## Usage
 
-Run the CLI with the desired city and country code as command-line arguments:
+1. **Add your API key:** Open the `src/main.rs` file and add your OpenWeatherMap API key to the following line (line 89):
 
-```bash
-cargo run <CITY> <COUNTRY_CODE>
-```
+   ```rust
+   "https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={YOUR_API_KEY}&units=metric",
+   ```
 
-Replace `<CITY>` with the name of the city and `<COUNTRY_CODE>` with the country code (e.g., "ind" for India).
+2. **Run the CLI:**
 
-Example:
+   ```bash
+   cargo run <CITY> <COUNTRY_CODE>
+   ```
 
-```bash
-cargo run nagpur ind
-```
+   Replace `<CITY>` with the name of the city and `<COUNTRY_CODE>` with the country code (e.g., "ind" for India).
+
+   Example:
+
+   ```bash
+   cargo run nagpur ind
+   ```
 
 ## Output
 
-The CLI will display information about the provided city's weather forecast, including the temperature in Celsius.
+The CLI will display information about the provided city's weather forecast, including temperature, description, humidity, wind speed and direction, and sunrise/sunset times.
 
 Example output:
 
 ```
-Name of the city: Nagpur and Country code: IND, temperature: 19.01 °C
+Weather forecast for Nagpur (IND):
+  - Temperature: 19.01 °C
 ```
 
 ## License
