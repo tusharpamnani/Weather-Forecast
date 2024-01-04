@@ -86,7 +86,7 @@ impl Forecast {
     async fn get(city: &String, country_code: &String) -> Result<Self, ExitFailure> {
         // Constructing the API URL with the provided city, country code, and API key
         let url = format!(
-            "https://api.openweathermap.org/data/2.5/weather?q={},{}&appid=cf10c933b07f4060bb5b008a186dbd77&units=metric",
+            "https://api.openweathermap.org/data/2.5/weather?q={},{}&appid={YOUR_API_KEY}&units=metric",
             city, country_code
         );
         
